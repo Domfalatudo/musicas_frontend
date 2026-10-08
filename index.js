@@ -15,13 +15,30 @@ async function buscarMusicas() {
                     <a class="editar" href="editar.html?id=${musica.id}">
                         <span class="material-symbols-outlined">edit</span>
                     </a>
-                    <button class="apagar">
+                    <button class="apagar" onclick="apagarMusica(${musica.id})">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </article>
         `;
     });
+}
+
+async function apagarMusica(id) {
+    const confirmou = confirm("Tem certeza que quer apagar essa música?");
+
+    if (!confirmou) {
+        return;
+    }
+
+    const resposta = await fetch(`${urlBackend}/apagar/${id}`, {
+        method: "DELETE",
+    });
+
+    const dados = await resposta.json();
+    alert(dados.mensagem);
+
+    window.location.reload();
 }
 
 buscarMusicas();
