@@ -4,26 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Músicas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Minhas Músicas</h1>
-        <a href="cadastrar.html">Cadastrar música</a>
-    </header>
-    <main>
-        <section id="listaMusicas">
-            <article class="musica">
-                <h2>Evidências</h2>
-                <p class="artista">Chitãozinho e Xororó</p>
-                <p class="detalhes">Sertanejo | 1990 | 5 min</p>
-                <div class="acoes">
-                    <a class="editar" href="editar.html?id=1">Editar</a>
-                    <button class="apagar">Apagar</button>
+    <div class="layout">
+        <div class="coluna-lista">
+            <header>
+                <div class="header-content">
+                    <div class="header-icon">
+                        <span class="material-symbols-outlined">music_note</span>
+                    </div>
+                    <div>
+                        <h1>Minhas Músicas</h1>
+                        <p class="subtitulo">Sua coleção pessoal</p>
+                    </div>
                 </div>
-            </article>
-        </section>
-    </main>
+                <a href="cadastrar.html" class="btn-adicionar">
+                    <span class="material-symbols-outlined">add</span>
+                    Nova Música
+                </a>
+            </header>
+            <main>
+                <div id="estatisticas" class="estatisticas">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">library_music</span>
+                        <div class="stat-info">
+                            <span class="stat-valor" id="totalMusicas">0</span>
+                            <span class="stat-label">Músicas</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <div class="stat-info">
+                            <span class="stat-valor" id="duracaoTotal">0h</span>
+                            <span class="stat-label">Tempo total</span>
+                        </div>
+                    </div>
+                </div>
+                <section id="listaMusicas">
+                </section>
+            </main>
+        </div>
+        <aside class="painel">
+            <div class="painel-header">
+                <span class="material-symbols-outlined">add_circle</span>
+                <h2 class="painel-titulo">Nova Música</h2>
+            </div>
+
+            <div class="form-group">
+                <label for="titulo">
+                    <span class="material-symbols-outlined">music_note</span>
+                    Título
+                </label>
+                <input type="text" id="titulo">
+            </div>
+
+            <div class="form-group">
+                <label for="artista">
+                    <span class="material-symbols-outlined">person</span>
+                    Artista
+                </label>
+                <input type="text" id="artista">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">
+                    <span class="material-symbols-outlined">category</span>
+                    Gênero
+                </label>
+                <input type="text" id="genero">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ano">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        Ano
+                    </label>
+                    <input type="number" id="ano">
+                </div>
+
+                <div class="form-group">
+                    <label for="duracao">
+                        <span class="material-symbols-outlined">schedule</span>
+                        Duração (min)
+                    </label>
+                    <input type="number" id="duracao" step="0.1">
+                </div>
+            </div>
+
+            <button id="botaoCadastrar">
+                <span class="material-symbols-outlined">check</span>
+                Cadastrar Música
+            </button>
+        </aside>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

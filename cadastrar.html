@@ -4,30 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar música</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="cadastrar.css">
 </head>
 <body>
-    <main>
-        <a class="voltar" href="index.html">Voltar para a lista</a>
-        <h1>Cadastrar música</h1>
+    <!-- Elementos decorativos de fundo -->
+    <div class="decoracao">
+        <div class="circulo circulo-1"></div>
+        <div class="circulo circulo-2"></div>
+        <div class="circulo circulo-3"></div>
+        <div class="grade"></div>
+        <div class="onda onda-1"></div>
+        <div class="onda onda-2"></div>
+    </div>
 
-        <label for="titulo">Título</label>
-        <input type="text" id="titulo">
+    <!-- Partículas flutuantes -->
+    <div class="particulas">
+        <span class="particula">♪</span>
+        <span class="particula">♫</span>
+        <span class="particula">♪</span>
+        <span class="particula">♫</span>
+        <span class="particula">♪</span>
+        <span class="particula">♫</span>
+    </div>
 
-        <label for="artista">Artista</label>
-        <input type="text" id="artista">
+    <!-- Botão voltar -->
+    <a class="voltar" href="index.html">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </a>
 
-        <label for="genero">Gênero</label>
-        <input type="text" id="genero">
+    <div class="container">
+        <!-- Seção Hero -->
+        <section class="hero">
+            <h1 class="hero-titulo">
+                <span class="destaque-gradient">Adicione</span> sua música favorita
+            </h1>
+            
+            <p class="hero-subtitulo">
+                Preencha os campos abaixo e expanda sua coleção musical. 
+                Organize suas músicas favoritas de forma simples e elegante.
+            </p>
 
-        <label for="ano">Ano</label>
-        <input type="number" id="ano">
+            <!-- Estatísticas decorativas -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="material-symbols-outlined">library_music</span>
+                    <div>
+                        <strong>1000+</strong>
+                        <span>Músicas cadastradas</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <span class="material-symbols-outlined">person</span>
+                    <div>
+                        <strong>500+</strong>
+                        <span>Artistas diferentes</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <span class="material-symbols-outlined">category</span>
+                    <div>
+                        <strong>50+</strong>
+                        <span>Gêneros musicais</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <label for="duracao">Duração em minutos</label>
-        <input type="number" id="duracao">
+        <!-- Formulário -->
+        <main class="formulario-container">
+            <div class="formulario-card">
+                <div class="card-header">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    <h2>Cadastrar música</h2>
+                </div>
 
-        <button id="botaoCadastrar">Cadastrar</button>
-    </main>
+                <form id="formCadastro">
+                    <div class="form-grid">
+                        <div class="input-group full">
+                            <label for="titulo">
+                                <span class="material-symbols-outlined">music_note</span>
+                                Título da música
+                            </label>
+                            <input type="text" id="titulo" required>
+                        </div>
+
+                        <div class="input-group full">
+                            <label for="artista">
+                                <span class="material-symbols-outlined">person</span>
+                                Nome do artista
+                            </label>
+                            <input type="text" id="artista" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="genero">
+                                <span class="material-symbols-outlined">category</span>
+                                Gênero musical
+                            </label>
+                            <input type="text" id="genero" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="ano">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                Ano de lançamento
+                            </label>
+                            <input type="number" id="ano" required>
+                        </div>
+
+                        <div class="input-group full">
+                            <label for="duracao">
+                                <span class="material-symbols-outlined">schedule</span>
+                                Duração em minutos
+                            </label>
+                            <input type="number" id="duracao" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="botaoCadastrar" class="btn-submit">
+                        <span class="material-symbols-outlined">check_circle</span>
+                        Cadastrar música
+                        <span class="btn-brilho"></span>
+                    </button>
+                </form>
+
+                <!-- Features decorativas -->
+                <div class="features">
+                    <div class="feature">
+                        <span class="material-symbols-outlined">lock</span>
+                        <span>Dados seguros</span>
+                    </div>
+                    <div class="feature">
+                        <span class="material-symbols-outlined">cloud_sync</span>
+                        <span>Sincronização automática</span>
+                    </div>
+                    <div class="feature">
+                        <span class="material-symbols-outlined">stars</span>
+                        <span>Interface moderna</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <script src="cadastrar.js"></script>
 </body>
 </html>
